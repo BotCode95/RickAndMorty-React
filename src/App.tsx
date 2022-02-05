@@ -1,10 +1,24 @@
 import './App.css';
+import { Listado } from './components/Listado/Listado';
+import { CharacterProvider } from './context/Characters/CharacterContext';
 
-export default function App() {
+const AppState = ({children} : any) => {
   return (
-    <div className="App">
-      <h1>Inicio</h1>
-    </div>
+    <CharacterProvider>
+      {children}
+    </CharacterProvider>
+  )
+}
+
+const App = () => {
+  return (
+    <AppState>
+      <div className="App">
+        <Listado></Listado>
+      </div>
+    </AppState>
   );
 }
+
+export default App;
 
