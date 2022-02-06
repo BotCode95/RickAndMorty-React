@@ -5,9 +5,152 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h3 {
+  color: #00c975;
 }
+span {
+  color: rgb(132, 133, 131);
+  text-decoration: underline;
+}
+
+input {
+  border-radius: 1rem;
+  border: 1px solid salmon;
+  padding: .1rem;
+  padding-left: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .container-card{
+    width: 70%;
+  }
+
+}
+
+.title {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 4rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.bg-page{
+  background-color: #c4c4c4;
+}
+
+/* Cards */
+
+.container-listado {
+  background-color: #222837;
+  border-radius: 25px;
+  color: white;
+  margin: auto;
+  margin-bottom: 1rem;
+  padding: .5rem;
+  width: 40%;
+}
+
+.item-list{
+  color: #00c975;
+  padding-left: 1rem; 
+}
+
+.container-card {
+  background-color: #222837;
+  border-radius: 25px;
+  color: white;
+  margin: auto;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: 60%;
+}
+
+.img-container{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.img-character{
+  border-radius: 50%;
+  margin: auto;
+  width: 100%; 
+}
+
+.img-character:hover{
+  cursor: pointer;
+  transform: scale(.9);
+}
+
+.article-card{
+  padding-left: .6rem;
+}
+
+.favorite{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-left: .3rem;
+}
+.icon {
+  width: 1rem;
+}
+
+.form-search{
+  margin-top: 1rem;
+}
+
+.input-search {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Navegación */
+
+a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  padding-right: 2rem;
+}
+
+li {
+  color : black;
+}
+.nav-active {
+  color: grey;
+  transition: all .3s ease-out;
+}
+
+.logo-base{
+  width: 100px;
+  padding-top: .7rem;
+  transition: all .3s ease-in-out;
+}
+
+.logo-base:hover{
+  transform: scale(1.1);
+}
+
+.nav-links {
+background-color: #222837;
+width: 90%;
+height: 100px;
+display: flex;
+align-items: center;
+justify-content: flex-end;
+border-radius: 20px 0 5px 0;
+color: white;
+}
+

@@ -1,6 +1,6 @@
-import './App.css';
-import { Listado } from './components/Listado/Listado';
+import { HomePage } from './pages/HomePage';
 import { CharacterProvider } from './context/Characters/CharacterContext';
+import { Navegation } from './navegation/Navegation';
 
 const AppState = ({children} : any) => {
   return (
@@ -13,9 +13,7 @@ const AppState = ({children} : any) => {
 const App = () => {
   return (
     <AppState>
-      <div className="App">
-        <Listado></Listado>
-      </div>
+        <Navegation/>
     </AppState>
   );
 }

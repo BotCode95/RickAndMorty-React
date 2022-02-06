@@ -9,7 +9,7 @@ export interface CharacterState {
 
 type CharacterAction = 
     |   {type: 'getCharacters', payload: {results: Result[]}}
-    // |   {type: 'getCharactersByPage', payload: {results: Result[]}}
+    |   {type: 'getCharacterById', payload: {character: Result}}
     |   {type: 'addError', payload: string}
     |   {type: 'removeError'}
 
@@ -21,12 +21,12 @@ export const characterReducer = (state: CharacterState, action: CharacterAction)
                 errorMessage: '',
                 results : action.payload.results
             }
-    // case 'getCharactersByPage' : 
-        // return {
-        //     ...state,
-        //     errorMessage: '',
-        //     results : action.payload.results
-        // }
+        case 'getCharacterById' : 
+            return {
+                ...state,
+                errorMessage: '',
+                character : action.payload.character
+            }
         case 'addError':
             return {
                 ...state,
