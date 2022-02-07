@@ -19,12 +19,12 @@ export const DetailsCard = () => {
     <div>
         {cargando ? <Spinner/> : null}
         {
-            character !== null && !cargando ? 
+            character !== null && (parseInt(id!) === character!.id)  ? 
             <>
-              <Title title={`Character : ${character?.name}`}/>
-              <Card character={character!}/>
+            <Title title={`Character : ${character?.name}`}/>
+            <Card character={character!}/>
             </>
-            : null
+            : <Spinner/>
         }
     </div>
   );

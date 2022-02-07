@@ -72,8 +72,7 @@ export const characterReducer = (state: CharacterState, action: CharacterAction)
         case 'removeFavorite': 
             return {
                 ...state,
-                favorites: state.favorites!.filter((favorite) => (favorite.id !== action.payload.characterId
-                ))
+                favorites: state.favorites!.filter((favorite) => (favorite.id !== action.payload.characterId))
             }
         default:
             return state

@@ -18,9 +18,10 @@ export const useCard = () => {
     }, [favorites, character])
   
     const isFavoriteCheck = () => {
-        const isFavorite  = favorites!.filter((favorite)  => (
+        const isFavorite = favorites!.filter((favorite)  => (
           favorite.id === character!.id
         ))
+        
       if(isFavorite[0] !== undefined && (isFavorite[0].id === character!.id)) {
         setFavoriteStar(true)
       }else {
