@@ -1,3 +1,4 @@
+/* Globals */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
+
 
 h3 {
   color: #00c975;
@@ -29,6 +31,18 @@ ul {
   margin: 0;
 }
 
+a{
+  text-decoration: none;
+  color: grey;
+  font-weight: bold;
+  font-size: 22px;
+  padding-right: 2rem;
+}
+
+li {
+  color : black;
+}
+
 @media (max-width: 768px) {
   .container-card{
     width: 70%;
@@ -36,6 +50,7 @@ ul {
 
 }
 
+/* Layout */
 .title {
   margin-top: 1rem;
   text-align: center;
@@ -45,6 +60,11 @@ ul {
 
 .bg-page{
   background-color: #c4c4c4;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 2rem;
 }
 
 /* Cards */
@@ -59,21 +79,31 @@ ul {
   width: 40%;
 }
 
-.item-list{
-  color: #00c975;
-  padding-left: 1rem; 
-}
-
-.container-card {
+.container {
   background-color: #222837;
   border-radius: 25px;
   color: white;
   margin: auto;
   margin-bottom: 1rem;
-  padding: 1rem;
+  padding: .5rem;
+}
+.container-location {
+  width: 60%;
+  text-align: center;
+}
+
+.container-card {
   width: 60%;
 }
 
+.favorite-icon{
+  color: rgb(0, 55, 158);
+}
+
+.item-list{
+  color: #00c975;
+  padding-left: 1rem; 
+}
 .img-container{
   align-items: center;
   display: flex;
@@ -115,21 +145,47 @@ ul {
   width: 100%;
 }
 
+/* Buttons */
+.btn-search{
+  border : none;
+  border-radius: 50%;
+  margin-top: .5rem;
+  transition: all .1s ease
+}
+
+.btn-search:hover{
+  transform: rotate(0.05turn);
+  background-color: rgb(115, 245, 245);
+}
+.btn-back{ 
+  color: white;
+  font-size: 20px;
+}
+
+.btn-back:hover {
+  color:rgb(115, 245, 245)
+}
+
+.btn-delete-filter{
+  border: none;
+  background-color: transparent;
+  color: red;
+  margin-top: .5rem;
+  font-size: 20px;
+  transition: all 1.s ease-in;
+}
+
+.btn-delete-filter:hover{ 
+  color: rgb(170, 0, 0);
+  transform: scale(1.1);
+}
+.input-search-box{
+  margin-top: .5rem;
+}
 /* Navegación */
 
-a{
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 22px;
-  padding-right: 2rem;
-}
-
-li {
-  color : black;
-}
 .nav-active {
-  color: grey;
+  color: white;
   transition: all .3s ease-out;
 }
 
@@ -153,4 +209,18 @@ justify-content: flex-end;
 border-radius: 20px 0 5px 0;
 color: white;
 }
+
+/* Icons */
+.icon-status{
+  margin-right: .3rem;
+  font-size: 10px;
+}
+.dead-icon {
+  color: red;
+}
+
+.alive-icon {
+  color : green;
+}
+
 

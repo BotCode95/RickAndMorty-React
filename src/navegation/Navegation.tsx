@@ -3,6 +3,8 @@ import { HomePage } from '../pages/HomePage';
 
 import logo from '../logo.png'
 import { DetailsPage } from '../pages/DetailsPage';
+import { NoMatch } from '../pages/NoMatch';
+import { FavoritesPage } from '../pages/FavoritesPage';
 export const Navegation = () => {
   return (
       <BrowserRouter>
@@ -27,7 +29,8 @@ export const Navegation = () => {
         <Routes>
             <Route path="/" element={<HomePage/>}/>
             <Route path="/details/:id" element={<DetailsPage/>}/>
-            {/* <Route path="*" element={<Error404/>}/> */}
+            <Route path="/favorites" element={<FavoritesPage/>}/>
+            <Route path="*" element={<NoMatch/>}/>
         </Routes>
       </BrowserRouter>
   )

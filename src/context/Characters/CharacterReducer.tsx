@@ -1,17 +1,28 @@
-import { Result } from "../../interfaces/data";
+import { Info, Result } from "../../interfaces/data";
+import { Location } from "../../interfaces/location";
 
 export interface CharacterState {
     results: Result[] | null;
-    character: Result | null;
-    errorMessage: string;
+    info: Info | null
+    character: Result | null;   
+    characterId: number;   
+    cargando : boolean;
+    location: Location | null;
+    favorites: Result[] | null;
+    errorMessage: string | null;
     msg: string | null;
 }
 
 type CharacterAction = 
-    |   {type: 'getCharacters', payload: {results: Result[]}}
-    |   {type: 'getCharacterById', payload: {character: Result}}
+    |   {type: 'addFavorite', payload: {character: Result}}
     |   {type: 'addError', payload: string}
+    |   {type: 'getCharacters', payload: {results: Result[] , info : Info}}
+    |   {type: 'getCharacterById', payload: {character: Result}}
+    |   {type: 'getCharactersByLocationName', payload: {location: Location}}
+    |   {type: 'getFavorites', payload: {favorites: Result[]}}
     |   {type: 'removeError'}
+    |   {type: 'removeFavorite', payload: {characterId: number}}
+    |   {type: 'removeFilter'}
 
 export const characterReducer = (state: CharacterState, action: CharacterAction) : CharacterState => {
     switch(action.type) {
@@ -19,13 +30,30 @@ export const characterReducer = (state: CharacterState, action: CharacterAction)
             return {
                 ...state,
                 errorMessage: '',
-                results : action.payload.results
+                cargando: false,
+                results : action.payload.results,
+                info : action.payload.info,
             }
         case 'getCharacterById' : 
             return {
                 ...state,
                 errorMessage: '',
-                character : action.payload.character
+                character : action.payload.character,
+                cargando: false
+            }
+        case 'getCharactersByLocationName': 
+            return {
+                ...state,
+                errorMessage: '',
+                location : action.payload.location,
+                cargando: false
+            }
+        case 'addFavorite':
+            return {
+                ...state,
+                character: action.payload.character,
+                favorites: [...state.favorites || [], action.payload.character],
+                cargando: false,
             }
         case 'addError':
             return {
@@ -36,6 +64,17 @@ export const characterReducer = (state: CharacterState, action: CharacterAction)
             return {
                 ...state,
                 errorMessage: ''
+            }
+        case 'removeFilter' : 
+            return {
+                ...state,
+                location: null
+            }
+        case 'removeFavorite': 
+            return {
+                ...state,
+                favorites: state.favorites!.filter((favorite) => (favorite.id !== action.payload.characterId
+                ))
             }
         default:
             return state
