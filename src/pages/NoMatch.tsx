@@ -1,13 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '../components/Buttons/Button';
+import { Title } from '../components/Layout/Title';
 import { Navegation } from '../navegation/Navegation';
 
 export const NoMatch = () => {
+
+  let navigate = useNavigate();
+  const goBack = () => {
+    navigate('/')
+  }
   return (
       <>
-        <Navegation/>
-        <h1>No Match</h1>
-        <Link to="/">go to home</Link>
+        <div className="subtitle">
+          <Title title={"Error 404"}/>
+          <h1>Page Not Found</h1>
+          <Button className="btn btn-warning" onClick={goBack}>Go to home</Button>
+        </div>
       </>
   );
 };

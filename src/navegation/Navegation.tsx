@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, NavLink, Navigate } from 'react-router-dom'
 import { HomePage } from '../pages/HomePage';
 
 import logo from '../logo.png'
@@ -15,8 +15,8 @@ export const Navegation = () => {
                 </NavLink>
                 <section className="nav-links">
                     <ul className="row">
-                        <li className="col-4">
-                            <NavLink to="/" className={({isActive}) => isActive ? 'nav-active' : '' }>Listado</NavLink>
+                        <li className="col-5">
+                            <NavLink to="/" className={({isActive}) => isActive ? 'nav-active' : '' }>Characters</NavLink>
                         </li>
                         <li className="col-4">
                             <NavLink to="/favorites" className={({isActive}) => isActive ? 'nav-active' : '' }>Favorites</NavLink>
@@ -30,7 +30,8 @@ export const Navegation = () => {
             <Route path="/" element={<HomePage/>}/>
             <Route path="/details/:id" element={<DetailsPage/>}/>
             <Route path="/favorites" element={<FavoritesPage/>}/>
-            <Route path="*" element={<NoMatch/>}/>
+            <Route path="/404" element={<NoMatch/>}/>
+            <Route path="*" element={<Navigate replace to="/404" />}/>
         </Routes>
       </BrowserRouter>
   )

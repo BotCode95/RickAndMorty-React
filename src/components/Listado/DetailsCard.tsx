@@ -21,8 +21,8 @@ export const DetailsCard = () => {
         {
             character !== null && !cargando ? 
             <>
-            <Title title={`Character : ${character?.name}`}/>
-            <Card character={character!}/>
+              <Title title={`Character : ${character?.name}`}/>
+              <Card character={character!}/>
             </>
             : null
         }

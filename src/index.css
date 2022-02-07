@@ -42,10 +42,21 @@ a{
 li {
   color : black;
 }
-
+@media (max-width: 992px) { 
+  .nav-links{
+    width: 70% !important;
+  }
+}
 @media (max-width: 768px) {
   .container-card{
     width: 70%;
+  }
+  .nav-links{
+    width: 60% !important;
+  }
+
+  .container-listado {
+    width: 70% !important;
   }
 
 }
@@ -70,6 +81,15 @@ li {
 
 /* Cards */
 
+.container {
+  background-color: #222837;
+  border-radius: 25px;
+  color: white;
+  margin: auto;
+  margin-bottom: 1rem;
+  padding: .5rem;
+}
+
 .container-listado {
   background-color: #222837;
   border-radius: 25px;
@@ -78,15 +98,6 @@ li {
   margin-bottom: 1rem;
   padding: .5rem;
   width: 40%;
-}
-
-.container {
-  background-color: #222837;
-  border-radius: 25px;
-  color: white;
-  margin: auto;
-  margin-bottom: 1rem;
-  padding: .5rem;
 }
 .container-location {
   width: 60%;
