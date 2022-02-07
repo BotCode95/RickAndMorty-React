@@ -1,5 +1,4 @@
 import { useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { CharacterContext } from "../../context/Characters/CharacterContext";
 import { useForm } from "../../hooks/useForm";
@@ -7,7 +6,6 @@ import { Button } from "../Buttons/Button";
 
 
 export const SearchInput = () => {
-  let navigate = useNavigate();
   const {locationName, onChange, reset} = useForm({
     locationName: ''
   })
@@ -35,8 +33,6 @@ export const SearchInput = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     getCharactersByLocation(locationName)
-    // navigate('location')
-
   }
   return (
     <div className="aling-center input-search">

@@ -7,8 +7,7 @@ interface Props {
     character: Result
 }
 export const useCard = ({character}: Props) => {
-    // const {image,name, species, status, origin,location} : Result = character;
-    const {addFavorite, favorites, removeFavorite, characterId} = useContext(CharacterContext)
+    const {addFavorite, favorites, removeFavorite} = useContext(CharacterContext)
     const navigate = useNavigate();
   
     const [favoriteStar, setFavoriteStar] = useState<boolean>(false);
@@ -19,20 +18,17 @@ export const useCard = ({character}: Props) => {
   
     useEffect(() => {
       isFavoriteCheck()
-    }, [favorites, characterId])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [favorites])
   
     const isFavoriteCheck = () => {
-      const isFavorite = favorites!.filter((favorite) => (
+      const isFavorite  = favorites!.some((favorite) : boolean => (
           favorite.id === character.id
       ))
-      // console.log(isFavorite)
-      // setFavorite(!favorite)
-      // console.log("Favorite" + favorite)
-      // if(!favorite) {
-      //     addFavorite(character)
-      // } else {
-      //     //remove
-      // }
+      if(isFavorite) {
+        setFavoriteStar(true)
+       
+      }
     }
     const isFavoriteBtn = () => { 
       setFavoriteStar(!favoriteStar)

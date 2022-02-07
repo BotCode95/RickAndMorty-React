@@ -1,6 +1,3 @@
-import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { CharacterContext } from "../../context/Characters/CharacterContext";
 import { useCard } from "../../hooks/useCard";
 import { Result } from "../../interfaces/data";
 import { Button } from "../Buttons/Button";

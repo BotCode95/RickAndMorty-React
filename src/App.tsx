@@ -1,4 +1,3 @@
-import { HomePage } from './pages/HomePage';
 import { CharacterProvider } from './context/Characters/CharacterContext';
 import { Navegation } from './navegation/Navegation';
 
