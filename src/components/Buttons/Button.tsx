@@ -1,13 +1,13 @@
-import React from 'react';
 
 interface Props {
     className : string,
     onClick? : () => void | JSX.Element,
-    children: string | JSX.Element
+    children: string | JSX.Element,
+    type? : 'submit' | 'button' | 'reset'
 }
-export const Button = ({className,onClick, children} : Props) => {
+export const Button = ({className,onClick, children, type = "button"} : Props) => {
   return (
-      <button className={className} onClick={onClick}>
+      <button className={className} onClick={onClick} type={type}>
           {children}
       </button>
   );

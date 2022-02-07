@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Title } from "../components/Layout/Title";
-import { Listado } from "../components/Listado/Listado";
+import { ListCharacters } from "../components/Listado/ListCharacters";
 import { ListLocation } from "../components/Search/ListLocation";
 import { SearchInput } from "../components/Search/SearchInput";
 import { Spinner } from "../components/Spinner/Spinner";
@@ -21,7 +21,7 @@ export const HomePage = () => {
         </div>
           {
             location !== null ? <ListLocation/>
-            : <Listado/>
+            : <ListCharacters/>
           }
         </section>
           </>

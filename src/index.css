@@ -60,6 +60,7 @@ li {
 
 .bg-page{
   background-color: #c4c4c4;
+  
 }
 
 .subtitle {
@@ -224,3 +225,7 @@ color: white;
 }
 
 
+.favorite-card{
+  padding-top: 1rem;
+  padding-bottom: 1.2rem;
+}
