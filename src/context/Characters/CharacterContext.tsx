@@ -31,7 +31,6 @@ const characterInitialState: CharacterState = {
     characterId: 0,
     location: null,
     favorites: [],
-    msg: null,
     errorMessage: null
 }
 
@@ -119,21 +118,21 @@ export const CharacterProvider = ({children} : any) => {
 
     return (
         <CharacterContext.Provider value={{
-            results : state.results,
-            info : state.info,
             cargando: state.cargando,
             character : state.character,
             characterId : state.characterId,
-            location : state.location,
-            favorites : state.favorites,
             errorMessage : state.errorMessage,
-            getCharacters,
-            getCharacterById,
-            getCharactersByLocation,
+            favorites : state.favorites,
+            info : state.info,
+            location : state.location,
+            results : state.results,
             addFavorite,
+            getCharacterById,
+            getCharacters,
+            getCharactersByLocation,
             removeError,
-            removeFilter,
             removeFavorite,
+            removeFilter,
         }}>
             {children}
         </CharacterContext.Provider>

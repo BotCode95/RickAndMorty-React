@@ -1,11 +1,14 @@
 import { usePageList } from "../../hooks/usePageList";
 import { Button } from "../Buttons/Button";
+import { Spinner } from "../Spinner/Spinner";
 import { Character } from "./Character";
 
 export const ListCharacters = () => {
-    const {finalPage,results,pageRef, pageNext, pagePrev} = usePageList();
+    const {cargando, finalPage,results,pageRef, pageNext, pagePrev} = usePageList();
   return (
-    <>    
+    <>
+    
+    {cargando ? <Spinner/> : null }    
     {results?.map((item) : React.ReactElement => (
         <div className="container container-listado" key={item.id}>
             <Character item={item}/>

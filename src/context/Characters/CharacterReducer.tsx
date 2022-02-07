@@ -2,15 +2,14 @@ import { Info, Result } from "../../interfaces/data";
 import { Location } from "../../interfaces/location";
 
 export interface CharacterState {
-    results: Result[] | null;
-    info: Info | null
+    cargando : boolean;
     character: Result | null;   
     characterId: number;   
-    cargando : boolean;
-    location: Location | null;
-    favorites: Result[] | null;
     errorMessage: string | null;
-    msg: string | null;
+    favorites: Result[] | null;
+    info: Info | null
+    location: Location | null;
+    results: Result[] | null;
 }
 
 type CharacterAction = 

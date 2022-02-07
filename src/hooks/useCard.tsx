@@ -1,13 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { CharacterContext } from "../context/Characters/CharacterContext";
-import { Result } from "../interfaces/data";
 
-interface Props {
-    character: Result
-}
-export const useCard = ({character}: Props) => {
-    const {addFavorite, favorites, removeFavorite} = useContext(CharacterContext)
+export const useCard = () => {
+    const {addFavorite,character, favorites, removeFavorite} = useContext(CharacterContext)
     const navigate = useNavigate();
   
     const [favoriteStar, setFavoriteStar] = useState<boolean>(false);
@@ -19,24 +15,25 @@ export const useCard = ({character}: Props) => {
     useEffect(() => {
       isFavoriteCheck()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [favorites])
+    }, [favorites, character])
   
     const isFavoriteCheck = () => {
-      const isFavorite  = favorites!.some((favorite) : boolean => (
-          favorite.id === character.id
-      ))
-      if(isFavorite) {
+        const isFavorite  = favorites!.filter((favorite)  => (
+          favorite.id === character!.id
+        ))
+      if(isFavorite[0] !== undefined && (isFavorite[0].id === character!.id)) {
         setFavoriteStar(true)
-       
+      }else {
+        setFavoriteStar(false)
       }
     }
     const isFavoriteBtn = () => { 
       setFavoriteStar(!favoriteStar)
       if(!favoriteStar) {
-          addFavorite(character)
+          addFavorite(character!)
       } 
       else {
-          removeFavorite(character.id)
+          removeFavorite(character!.id)
       }
     }
   return {

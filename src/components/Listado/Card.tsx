@@ -9,7 +9,7 @@ interface Props {
 export const Card = ({character} : Props ) => {
 
   const {image,name, species, status, origin,location} : Result = character;
-  const {favoriteStar,goBack,isFavoriteBtn} = useCard({character})
+  const {favoriteStar,goBack,isFavoriteBtn} = useCard()
   return (
     <section className="row container container-card">
         <div className="col-1">
@@ -17,10 +17,10 @@ export const Card = ({character} : Props ) => {
                 <i className="bi bi-arrow-left"></i>
             </Button>
         </div>
-        <div className="col-4 img-container">
+        <div className="col-md-4 col-lg-4 col-sm-8 img-container">
             <img src={image} className="img-character" alt={name}/>
         </div>
-        <article className="col-7 article-card">
+        <article className="col-md-7 col-lg-7 col-sm-12 article-card">
             <div className="row">
                 <h3 className="col-10">{name}</h3>
                 <div className="col-2 favorite">

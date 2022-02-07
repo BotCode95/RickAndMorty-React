@@ -3,17 +3,14 @@ import { Title } from "../components/Layout/Title";
 import { ListCharacters } from "../components/Listado/ListCharacters";
 import { ListLocation } from "../components/Search/ListLocation";
 import { SearchInput } from "../components/Search/SearchInput";
-import { Spinner } from "../components/Spinner/Spinner";
 import { CharacterContext } from "../context/Characters/CharacterContext";
 
 
 export const HomePage = () => {
 
-  const {location, cargando} = useContext(CharacterContext)
+  const {location} = useContext(CharacterContext)
   return (
-      <> {
-        cargando ? <Spinner/> : null }
-          <> 
+      <> 
         <Title title="Rick and Morty"/>
         <section className="bg-page">
         <div className="row justify-content-center m-2">
@@ -24,7 +21,6 @@ export const HomePage = () => {
             : <ListCharacters/>
           }
         </section>
-          </>
         
         
       </>

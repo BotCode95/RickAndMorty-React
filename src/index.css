@@ -51,14 +51,17 @@ li {
   .container-card{
     width: 70%;
   }
-  .nav-links{
-    width: 60% !important;
-  }
 
   .container-listado {
     width: 70% !important;
   }
 
+}
+
+@media (max-width: 469px) {
+  .nav-links{
+    width: 60% !important;
+  }
 }
 
 /* Layout */
