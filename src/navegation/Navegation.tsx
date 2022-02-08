@@ -13,7 +13,12 @@ export const Navegation = () => {
                 <NavLink to="/">
                     <img src={logo} alt="logo-base" className="logo-base"/>
                 </NavLink>
-                <section className="nav-links">
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+                        aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                        </button>
+                <section className="collapse navbar-collapse nav-links" id="navbarNav">
                     <ul className="row">
                         <li className="col-5">
                             <NavLink to="/" className={({isActive}) => isActive ? 'nav-active' : '' }>Characters</NavLink>

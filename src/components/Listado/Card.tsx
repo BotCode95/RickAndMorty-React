@@ -9,7 +9,7 @@ interface Props {
 export const Card = ({character} : Props ) => {
 
   const {image,name, species, status, origin,location} : Result = character;
-  const {favoriteStar,goBack,isFavoriteBtn} = useCard()
+  const {favoriteStar,goBack,isFavoriteBtn} = useCard();
   return (
     <section className="row container container-card">
         <div className="col-1">

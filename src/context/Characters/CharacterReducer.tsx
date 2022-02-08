@@ -18,7 +18,6 @@ type CharacterAction =
     |   {type: 'getCharacters', payload: {results: Result[] , info : Info}}
     |   {type: 'getCharacterById', payload: {character: Result}}
     |   {type: 'getCharactersByLocationName', payload: {location: Location}}
-    |   {type: 'getFavorites', payload: {favorites: Result[]}}
     |   {type: 'removeError'}
     |   {type: 'removeFavorite', payload: {characterId: number}}
     |   {type: 'removeFilter'}

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in <Character/> should render component 1`] = `
+<Link
+  className="item-list"
+  to="/details/1"
+>
+  Rick Sanchez
+</Link>
+`;

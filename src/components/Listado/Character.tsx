@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
-import { Result } from "../../interfaces/data";
-
-
 interface Props {
-    item : Result
+    id : number,
+    name: string
 }
 
-export const Character = ({item} : Props ) => {
-    const {id, name} = item;
+export const Character = ({id,name} : Props ) => {
   return (
     <Link to={`/details/${id}`} className="item-list">
         {name}

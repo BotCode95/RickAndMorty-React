@@ -10,7 +10,7 @@ export const ListCharacters = () => {
     {cargando ? <Spinner/> : null }    
     {results?.map((item) : React.ReactElement => (
         <div className="container container-listado" key={item.id}>
-            <Character item={item}/>
+            <Character id={item.id} name={item.name}/>
         </div>
     ))}
         <div className="row justify-content-center">

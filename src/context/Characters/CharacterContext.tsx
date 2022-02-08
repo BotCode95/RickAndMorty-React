@@ -55,7 +55,7 @@ export const CharacterProvider = ({children} : any) => {
         } catch (error) {
             dispatch({
                 type: 'addError',
-                payload: 'Error'
+                payload: 'página incorrecta'
             })
         }
     }
@@ -70,7 +70,7 @@ export const CharacterProvider = ({children} : any) => {
         } catch (error) {
             dispatch({
                 type: 'addError',
-                payload: 'Error'
+                payload: 'El id es incorrecto'
             })
         }
     }
