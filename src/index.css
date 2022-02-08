@@ -48,12 +48,22 @@ li {
   }
 }
 @media (max-width: 768px) {
-  .container-card{
-    width: 70%;
+  .container-card  .container-listado{
+    width: 70% !important;
+  }
+  .container-location{
+    width: 95% !important;
   }
 
-  .container-listado {
-    width: 70% !important;
+  .btn-pages{
+    width: 150px;
+  }
+
+  .nav-link-location {
+    font-size: 15px;
+    text-align: center;
+    padding: 0;
+
   }
 
 }
@@ -202,6 +212,10 @@ li {
 .nav-active {
   color: white;
   transition: all .3s ease-out;
+}
+
+.nav-link-location {
+  color: white;
 }
 
 .logo-base{

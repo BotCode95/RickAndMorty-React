@@ -16,7 +16,7 @@ export const ListCharacters = () => {
         <div className="row justify-content-center">
             {pageRef.current !== 1 && (
                 <Button 
-                  className="btn btn-danger col-2 ms-2 mb-5" 
+                  className="btn btn-danger col-2 ms-2 mb-5 btn-pages" 
                   onClick={pagePrev} 
                 >
                   Anterior
@@ -24,7 +24,7 @@ export const ListCharacters = () => {
             )}
             {!finalPage && (
                 <Button 
-                    className="btn btn-info col-2 ms-2 mb-5" 
+                    className="btn btn-info col-2 ms-2 mb-5 btn-pages" 
                     onClick={pageNext} 
                 >
                     Siguiente

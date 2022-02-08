@@ -20,7 +20,7 @@ export const Resident = ({resident} : Props) => {
   
   return (
       <div className="container container-location">
-        <Link to={`/details/${idPage}`} className="nav-active">{resident}</Link>
+        <Link to={`/details/${idPage}`} className="nav-link-location">{resident}</Link>
       </div>
   );
 };
