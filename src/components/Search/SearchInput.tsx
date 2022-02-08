@@ -27,7 +27,7 @@ export const SearchInput = () => {
   
   const deleteFilter = () => {
     removeFilter();
-    reset('locationName');
+    reset();
   }
 
   const handleSubmit = (e: any) => {

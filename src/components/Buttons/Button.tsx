@@ -12,3 +12,4 @@ export const Button = ({className,onClick, children, type = "button"} : Props) =
       </button>
   );
 };
+

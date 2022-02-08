@@ -10,11 +10,8 @@ export const useForm = <T extends Object>(initState: T) => {
         })
     }
 
-    const reset = (field: keyof T) => {
-        setState({
-            ...state,
-            [field] :''
-        })
+    const reset = () => {
+        setState(initState)
     }
     
     return {
