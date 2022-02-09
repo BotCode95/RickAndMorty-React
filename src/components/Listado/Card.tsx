@@ -1,12 +1,14 @@
 import { useCard } from "../../hooks/useCard";
 import { Result } from "../../interfaces/data";
 import { Button } from "../Buttons/Button";
+import { Icon } from "../Layout/Icon";
 
 interface Props {
-    character : Result
+    character : Result,
+    favoritePage?: boolean
 }
 
-export const Card = ({character} : Props ) => {
+export const Card = ({character, favoritePage= false} : Props ) => {
 
   const {image,name, species, status, origin,location} : Result = character;
   const {favoriteStar,goBack,isFavoriteBtn} = useCard();
@@ -14,7 +16,7 @@ export const Card = ({character} : Props ) => {
     <section className="row container container-card">
         <div className="col-1">
             <Button className="btn btn-back" onClick={goBack} >
-                <i className="bi bi-arrow-left"></i>
+                <Icon className="bi bi-arrow-left"></Icon>
             </Button>
         </div>
         <div className="col-md-4 col-lg-4 col-sm-8 img-container">
@@ -24,16 +26,19 @@ export const Card = ({character} : Props ) => {
             <div className="row">
                 <h3 className="col-10">{name}</h3>
                 <div className="col-2 favorite">
-                    <Button className="btn btn-info" onClick={isFavoriteBtn}>
-                        {favoriteStar ? (
-                            <i className="bi bi-star-fill favorite-icon"></i> 
-                        ): (
-                            <i className="bi bi-star"></i>
-                        )}
-                    </Button>
+                   { !favoritePage && (
+                        <Button className="btn btn-info" onClick={isFavoriteBtn}>
+                                {favoriteStar ? (
+                                    <Icon className="bi bi-star-fill favorite-icon"></Icon> 
+                                ): (
+                                    <Icon className="bi bi-star"></Icon>
+                                )}
+                        </Button>
+                        )
+                    }
                 </div>
             </div>
-            <i className={`bi bi-circle-fill icon-status ${(status === 'Alive')  ? 'alive-icon' : 'dead-icon'}`}></i>
+            <Icon className={`bi bi-circle-fill icon-status ${(status === 'Alive')  ? 'alive-icon' : 'dead-icon'}`}></Icon>
              {status} - {species}
             <div> 
                 <span>First seen in:</span>

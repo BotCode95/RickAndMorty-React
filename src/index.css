@@ -155,8 +155,10 @@ li {
   align-items: flex-start;
   padding-left: .3rem;
 }
-.icon {
-  width: 1rem;
+
+.favorite-card{
+  padding-top: 1rem;
+  padding-bottom: 1.2rem;
 }
 
 .form-search{
@@ -240,6 +242,9 @@ color: white;
 }
 
 /* Icons */
+.icon {
+  width: 1rem;
+}
 .icon-status{
   margin-right: .3rem;
   font-size: 10px;
@@ -250,10 +255,4 @@ color: white;
 
 .alive-icon {
   color : green;
-}
-
-
-.favorite-card{
-  padding-top: 1rem;
-  padding-bottom: 1.2rem;
 }

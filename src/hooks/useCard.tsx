@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { CharacterContext } from "../context/Characters/CharacterContext";
 
 export const useCard = () => {
-    const {addFavorite,character, favorites, removeFavorite} = useContext(CharacterContext)
+    const {addFavorite,character, favorites, removeFavorite} = useContext(CharacterContext);
     const navigate = useNavigate();
   
     const [favoriteStar, setFavoriteStar] = useState<boolean>(false);
@@ -21,8 +21,7 @@ export const useCard = () => {
         const isFavorite = favorites!.filter((favorite)  => (
           favorite.id === character!.id
         ))
-        
-      if(isFavorite[0] !== undefined && (isFavorite[0].id === character!.id)) {
+      if(isFavorite[0] !== undefined && (isFavorite[0]?.id === character!.id)) {
         setFavoriteStar(true)
       }else {
         setFavoriteStar(false)

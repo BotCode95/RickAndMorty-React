@@ -16,7 +16,7 @@ export const Favorites = () => {
             <div>
               {favorites?.map((favorite) => (
                 <div key={favorite.id} className="favorite-card">
-                  <Card character={favorite}/>
+                  <Card character={favorite} favoritePage={true}/>
                 </div>
               ))}
             </div>

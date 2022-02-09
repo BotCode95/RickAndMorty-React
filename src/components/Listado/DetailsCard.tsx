@@ -21,8 +21,8 @@ export const DetailsCard = () => {
         {
             character !== null && (parseInt(id!) === character!.id)  ? 
             <>
-            <Title title={`Character : ${character?.name}`}/>
-            <Card character={character!}/>
+              <Title title={`Character : ${character?.name}`}/>
+              <Card character={character!}/>
             </>
             : <Spinner/>
         }

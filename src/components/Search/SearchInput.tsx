@@ -1,39 +1,10 @@
-import { useContext, useEffect } from "react";
-import Swal from "sweetalert2";
-import { CharacterContext } from "../../context/Characters/CharacterContext";
-import { useForm } from "../../hooks/useForm";
+import { useSearch } from "../../hooks/useSearch";
 import { Button } from "../Buttons/Button";
+import { Icon } from "../Layout/Icon";
 
 
 export const SearchInput = () => {
-  const {locationName, onChange, reset} = useForm({
-    locationName: ''
-  })
-
-  const {errorMessage, location, getCharactersByLocation, removeFilter, removeError} = useContext(CharacterContext);
-
-  useEffect(() => {
-    if(errorMessage) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: `${errorMessage}`,
-        });
-
-        removeError()
-      }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[errorMessage, location])
-  
-  const deleteFilter = () => {
-    removeFilter();
-    reset();
-  }
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    getCharactersByLocation(locationName)
-  }
+  const {locationName, location, deleteFilter, handleSubmit, onChange} =useSearch();
   return (
     <div className="aling-center input-search">
       <form onSubmit={handleSubmit}>
@@ -50,14 +21,14 @@ export const SearchInput = () => {
       { 
         locationName !== '' && (
           <Button type="submit" className="btn-search ms-2">
-            <span><i className="bi bi-search"></i></span>
+            <span><Icon className="bi bi-search"></Icon></span>
           </Button>
         )} 
       </form>
       {
         location !== null && (
           <Button className="btn-delete-filter" onClick={deleteFilter}>
-            <i className="bi bi-dash-circle"></i>
+            <Icon className="bi bi-dash-circle"></Icon>
           </Button>
         )
       }
